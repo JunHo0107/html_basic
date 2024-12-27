@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <style>
-        div{
+        div {
             border: 1px solid black;
         }
 
-        .card{
+        .card {
             width: 300px;
             height: 600px;
         }
 
-        .img-box{
+        .img-box {
             /* width는 부모의 300px이 적용되어 있다 */
             height: 300px;
 
@@ -26,84 +27,391 @@
             position: relative;
         }
 
-        .prod-img{
+        .prod-img {
             width: 300px;
             height: 600px;
         }
 
-        .like-box{
+        .like-box {
             position: absolute;
             right: 20px;
             bottom: 20px;
-            
+
             width: 50px;
             height: 50px;
             border-radius: 25px;
             background-color: #00000070;
-            
+
             /* 내부 요소 중앙 정렬 */
             display: flex;
-            justify-content: center; /* 수평 방향 정렬*/
-            align-items: center; /* 수직 방향 정렬*/
+            justify-content: center;
+            /* 수평 방향 정렬*/
+            align-items: center;
+            /* 수직 방향 정렬*/
 
         }
 
-        .like{
+        .like {
             width: 30px;
             height: 30px;
             filter: contrast(0%) brightness(500%)
         }
 
-        .count-box{
+        .count-box {
             display: flex;
             margin-top: 5px;
 
-            /* count-box 내 첫번재 div와 세번째 div에 스타일 적용 */
-            .count-box > div:nth-child(1), .count-box > div:nth-child(3){
-                width: 30%;
-            }
 
-            .count-box > div:nth-child(2){
-            width: 40%;    
+        }
 
-            }
-            
-                
-            /*  */
-            .count-box > div{
-                text-align: center;
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
+        /* count-box 내 첫번재 div와 세번째 div에 스타일 적용 */
+        .count-box>div:nth-child(1),
+        .count-box>div:nth-child(3) {
+            width: 30%;
+        }
+
+        .count-box>div:nth-child(2) {
+            width: 40%;
+
         }
 
 
+        /* count-box 내 모든 자식 div에 스타일 적용  */
+        .count-box>div {
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .btn {
+            width: 80px;
+            height: 30px;
+            background-color: red;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .prod-title {
+            font-size: 18px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .prod-price {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .won {
+            font-size: 20px;
+        }
+
+        /* prod-title과 won에서 중복+단순하게 사용하는 스타일 따로 선언 */
+        .fs-18 {
+            font-size: 18px;
+        }
+
+        .review-box {
+            display: flex;
+            align-items: center;
+
+        }
+
+        .c-g {
+            color: rgb(90, 200, 10);
+        }
+
+        .card-container {
+            width: 1400px;
+            margin: auto;
+
+            display: flex;
+
+            /* 한줄에 다 담을 수 없는 경우 줄 바꿈 처리 */
+            flex-wrap: wrap;
+
+            justify-content: space-between;
+        }
     </style>
- </head>
+</head>
+
 <body>
-    
 
-    <div class="card">
-        <div class="img-box">
-            <img class="prod-img" src="https://asset.m-gs.kr/prod/1069132890/1/370" alt="">
-            <div class="like-box">
-                <img class="like" src="https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png" alt="">
+    <div class="card-container">
+
+
+        <div class="card">
+            <div class="img-box">
+                <img class="prod-img" src="https://asset.m-gs.kr/prod/1069132890/1/370" alt="">
+                <div class="like-box">
+                    <img class="like" src="https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png" alt="">
+                </div>
             </div>
-        </div>
 
-        <div class="count-box">
-            <div>-</div>
-            <div>0</div>
-            <div>+</div>
-        </div>
+            <div class="count-box">
+                <div>-</div>
+                <div>0</div>
+                <div>+</div>
+            </div>
 
-        <div class="content-box">
-            <div class="content-box">
-                <div class="content-box">전단행사</div>
+            <div>
+                <div class="btn">전단행사</div>
+                <div class="fs-18 prod-title">신상 크라운 포차코 기획 170g(치즈샌드+콘칩+조리퐁+카라멜콘땅콩)</div>
+                <div>
+                    <span class="prod-price">4,980</span><span class="won">원</span>
+                </div>
+                <div class="review-box">
+                    <img width="30px" src="IMAGES/redstar.png" alt="">
+                    <span>4.83</span>
+                    <span>리뷰 6</span>
+                </div>
+                <div>
+                    <span>포인트</span>
+                    <span class="c-g"> 49원</span>
+                    <span>적립</span>
+                </div>
+                <div class="card">
+                    <div class="img-box">
+                        <img class="prod-img" src="https://asset.m-gs.kr/prod/1069132890/1/370" alt="">
+                        <div class="like-box">
+                            <img class="like" src="https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png"
+                                alt="">
+                        </div>
+                    </div>
 
-        </div>
-    </div>
+                    <div class="count-box">
+                        <div>-</div>
+                        <div>0</div>
+                        <div>+</div>
+                    </div>
 
+                    <div>
+                        <div class="btn">전단행사</div>
+                        <div class="fs-18 prod-title">신상 크라운 포차코 기획 170g(치즈샌드+콘칩+조리퐁+카라멜콘땅콩)</div>
+                        <div>
+                            <span class="prod-price">4,980</span><span class="won">원</span>
+                        </div>
+                        <div class="review-box">
+                            <img width="30px" src="IMAGES/redstar.png" alt="">
+                            <span>4.83</span>
+                            <span>리뷰 6</span>
+                        </div>
+                        <div>
+                            <span>포인트</span>
+                            <span class="c-g"> 49원</span>
+                            <span>적립</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-box">
+                            <img class="prod-img" src="https://asset.m-gs.kr/prod/1069132890/1/370" alt="">
+                            <div class="like-box">
+                                <img class="like" src="https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png"
+                                    alt="">
+                            </div>
+                        </div>
+
+                        <div class="count-box">
+                            <div>-</div>
+                            <div>0</div>
+                            <div>+</div>
+                        </div>
+
+                        <div>
+                            <div class="btn">전단행사</div>
+                            <div class="fs-18 prod-title">신상 크라운 포차코 기획 170g(치즈샌드+콘칩+조리퐁+카라멜콘땅콩)</div>
+                            <div>
+                                <span class="prod-price">4,980</span><span class="won">원</span>
+                            </div>
+                            <div class="review-box">
+                                <img width="30px" src="IMAGES/redstar.png" alt="">
+                                <span>4.83</span>
+                                <span>리뷰 6</span>
+                            </div>
+                            <div>
+                                <span>포인트</span>
+                                <span class="c-g"> 49원</span>
+                                <span>적립</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="img-box">
+                                <img class="prod-img" src="https://asset.m-gs.kr/prod/1069132890/1/370" alt="">
+                                <div class="like-box">
+                                    <img class="like"
+                                        src="https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png" alt="">
+                                </div>
+                            </div>
+
+                            <div class="count-box">
+                                <div>-</div>
+                                <div>0</div>
+                                <div>+</div>
+                            </div>
+
+                            <div>
+                                <div class="btn">전단행사</div>
+                                <div class="fs-18 prod-title">신상 크라운 포차코 기획 170g(치즈샌드+콘칩+조리퐁+카라멜콘땅콩)</div>
+                                <div>
+                                    <span class="prod-price">4,980</span><span class="won">원</span>
+                                </div>
+                                <div class="review-box">
+                                    <img width="30px" src="IMAGES/redstar.png" alt="">
+                                    <span>4.83</span>
+                                    <span>리뷰 6</span>
+                                </div>
+                                <div>
+                                    <span>포인트</span>
+                                    <span class="c-g"> 49원</span>
+                                    <span>적립</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card">
+                            <div class="img-box">
+                                <img class="prod-img" src="https://asset.m-gs.kr/prod/1069132890/1/370" alt="">
+                                <div class="like-box">
+                                    <img class="like"
+                                        src="https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png" alt="">
+                                </div>
+                            </div>
+
+                            <div class="count-box">
+                                <div>-</div>
+                                <div>0</div>
+                                <div>+</div>
+                            </div>
+
+                            <div>
+                                <div class="btn">전단행사</div>
+                                <div class="fs-18 prod-title">신상 크라운 포차코 기획 170g(치즈샌드+콘칩+조리퐁+카라멜콘땅콩)</div>
+                                <div>
+                                    <span class="prod-price">4,980</span><span class="won">원</span>
+                                </div>
+                                <div class="review-box">
+                                    <img width="30px" src="IMAGES/redstar.png" alt="">
+                                    <span>4.83</span>
+                                    <span>리뷰 6</span>
+                                </div>
+                                <div>
+                                    <span>포인트</span>
+                                    <span class="c-g"> 49원</span>
+                                    <span>적립</span>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="img-box">
+                                    <img class="prod-img" src="https://asset.m-gs.kr/prod/1069132890/1/370" alt="">
+                                    <div class="like-box">
+                                        <img class="like"
+                                            src="https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png"
+                                            alt="">
+                                    </div>
+                                </div>
+
+                                <div class="count-box">
+                                    <div>-</div>
+                                    <div>0</div>
+                                    <div>+</div>
+                                </div>
+
+                                <div>
+                                    <div class="btn">전단행사</div>
+                                    <div class="fs-18 prod-title">신상 크라운 포차코 기획 170g(치즈샌드+콘칩+조리퐁+카라멜콘땅콩)</div>
+                                    <div>
+                                        <span class="prod-price">4,980</span><span class="won">원</span>
+                                    </div>
+                                    <div class="review-box">
+                                        <img width="30px" src="IMAGES/redstar.png" alt="">
+                                        <span>4.83</span>
+                                        <span>리뷰 6</span>
+                                    </div>
+                                    <div>
+                                        <span>포인트</span>
+                                        <span class="c-g"> 49원</span>
+                                        <span>적립</span>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="img-box">
+                                        <img class="prod-img" src="https://asset.m-gs.kr/prod/1069132890/1/370" alt="">
+                                        <div class="like-box">
+                                            <img class="like"
+                                                src="https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png"
+                                                alt="">
+                                        </div>
+                                    </div>
+
+                                    <div class="count-box">
+                                        <div>-</div>
+                                        <div>0</div>
+                                        <div>+</div>
+                                    </div>
+
+                                    <div>
+                                        <div class="btn">전단행사</div>
+                                        <div class="fs-18 prod-title">신상 크라운 포차코 기획 170g(치즈샌드+콘칩+조리퐁+카라멜콘땅콩)</div>
+                                        <div>
+                                            <span class="prod-price">4,980</span><span class="won">원</span>
+                                        </div>
+                                        <div class="review-box">
+                                            <img width="30px" src="IMAGES/redstar.png" alt="">
+                                            <span>4.83</span>
+                                            <span>리뷰 6</span>
+                                        </div>
+                                        <div>
+                                            <span>포인트</span>
+                                            <span class="c-g"> 49원</span>
+                                            <span>적립</span>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="img-box">
+                                            <img class="prod-img" src="https://asset.m-gs.kr/prod/1069132890/1/370"
+                                                alt="">
+                                            <div class="like-box">
+                                                <img class="like"
+                                                    src="https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+
+                                        <div class="count-box">
+                                            <div>-</div>
+                                            <div>0</div>
+                                            <div>+</div>
+                                        </div>
+
+                                        <div>
+                                            <div class="btn">전단행사</div>
+                                            <div class="fs-18 prod-title">신상 크라운 포차코 기획 170g(치즈샌드+콘칩+조리퐁+카라멜콘땅콩)</div>
+                                            <div>
+                                                <span class="prod-price">4,980</span><span class="won">원</span>
+                                            </div>
+                                            <div class="review-box">
+                                                <img width="30px" src="IMAGES/redstar.png" alt="">
+                                                <span>4.83</span>
+                                                <span>리뷰 6</span>
+                                            </div>
+                                            <div>
+                                                <span>포인트</span>
+                                                <span class="c-g"> 49원</span>
+                                                <span>적립</span>
+                                            </div>
+                                        </div>
+                                    </div> <!--End of card -->
+
+
+                                </div> <!--End of card-container-->
 
 </body>
+
 </html>
